@@ -18,7 +18,7 @@ h1 {
 }
 
 figcaption {
-    margin-left: 277px;
+    margin-left: 12px;
 }
 
 img.product{
@@ -26,10 +26,6 @@ img.product{
     margin-left: auto;
     margin-right: auto;
     display: block;
-}
-
-img:hover {
-    color: yellow;
 }
 
 
@@ -74,4 +70,18 @@ h2 {
 
 #button {
     text-align: center;
+}
+
+#image1:hover, #image2:hover, #image3:hover, 
+#image4:hover, #image5:hover, #image6:hover {
+    background-color: yellow;
+}
+
+#image1,  #image2, #image3, #image4, #image5, #image6 {
+    padding-top: 5px;
+}
+
+#products {
+    padding-left: 270px;
+    padding-right: 270px;
 }
