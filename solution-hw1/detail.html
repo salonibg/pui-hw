@@ -10,34 +10,42 @@
   <body>
 
     <p>
-      <a class="select" href="./index.html">PRODUCTS</a><br/>
-      <a href="./otherpage.html">CART</a>
-    </p>
+        <div id="nav">
+            <a class="select" href="./index.html">PRODUCTS</a><br/>
+            <a href="./otherpage.html">CART</a>
+        </div>
+    </p><br>
 
     <h1>Original cinnamon roll</h1>
 
       <figure>
-        <a href="./detail.html"><img src="./original-cinnamon-roll.jpg" width="200" alt="Original" /><br></a>
-        <figcaption>Customize our delicious, hand-made cinammon roll to your liking!</figcaption>
-      </figure>
+        <a href="./detail.html"><img class="product" src="./original-cinnamon-roll.jpg" width="300" alt="Original" /><br></a>
+        <figcaption>Customize our delicious, <br>
+            hand-made cinammon roll to <br>
+            your liking!</figcaption>
+      </figure><br>
 
-    <label for="glaze">Glazing:</label>
-    <select name="glaze" id="glaze">
-        <option value="one">Keep original</option>
-        <option value="two">Sugar milk</option>
-        <option value="three">Vanilla milk</option>
-        <option value="four">Double chocolate</option>
-    </select><br/><br>
+    <div id="dropdown">
+        <label for="glaze">Glazing:</label><br>
+        <select name="glaze" id="glaze">
+            <option value="one">Keep original</option>
+            <option value="two">Sugar milk</option>
+            <option value="three">Vanilla milk</option>
+            <option value="four">Double chocolate</option>
+        </select>
+        <br/><br>
 
-    <label for="pack">Pack size:</label>
-    <select name="glaze" id="glaze">
-        <option value="one">1</option>
-        <option value="two">3</option>
-        <option value="three">6</option>
-        <option value="four">10</option>
-    </select>
+        <label for="pack">Pack size:</label><br>
+        <select name="glaze" id="glaze">
+            <option value="one">1</option>
+            <option value="two">3</option>
+            <option value="three">6</option>
+            <option value="four">10</option>
+        </select>
+        <br/><br><br>
+    </div>
 
-    <p>$2.49 <button type="button">Add to cart</button></p>
+    <p class="details ">$2.49  <button type="button">Add to cart</button></p>
 
     </body>
 </html>
