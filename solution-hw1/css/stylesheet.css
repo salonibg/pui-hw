@@ -18,7 +18,7 @@ h1 {
 }
 
 figcaption {
-    margin-left: 12px;
+    margin-left: 190px;
 }
 
 img.product{
@@ -27,7 +27,6 @@ img.product{
     margin-right: auto;
     display: block;
 }
-
 
 a {
     color: black;
@@ -45,7 +44,7 @@ a.select {
 }
 
 #dropdown {
-    margin-left: 320px;
+    margin-left: 506px;
 }
 
 h4 {
@@ -59,7 +58,7 @@ p {
 
 p.details {
     text-align: left;
-    margin-left: 320px;
+    margin-left: 506px;
 }
 
 h2 {
@@ -84,4 +83,9 @@ h2 {
 #products {
     padding-left: 270px;
     padding-right: 270px;
+}
+
+button {
+    background-color: yellow;
+    font-weight: bold;
 }
