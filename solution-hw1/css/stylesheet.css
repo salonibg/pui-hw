@@ -18,7 +18,8 @@ h1 {
 }
 
 figcaption {
-    margin-left: 190px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 img.product{
