@@ -1,41 +1,64 @@
 /*--------------BODY-------------------*/
 body {
-    margin-left: 50px;
-    margin-right: 50px; 
     font-family: sans-serif;
 }
 
-/*--------------CONTAINER-------------------*/
-#container {
-    width: 1200px;
-    margin: 0px auto;
-}
 
 /*--------------HEADER-------------------*/
 #header {
     display: flex;
-    width: inherit;
-    height: 100px;
+    width: 100%;
+    height: 150px;
     margin-top: 15px;
-    position: fixed;
+    margin-left: 25px;
     top: 0px;
-    background-color: #ffffff;
-
-    justify-content: space-between;
-    align-items: flex-start;
-    flex: 00auto;width:150px;
-    flex: 10auto;
+    justify-content:space-between;
 }
 
-/*--------------ROWS-------------------*/
-.products-row-1 {
-    width: 500px;
+hr {
+    width: 100%;
+  }
+
+
+.header-right {
+    float: right;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 25px;
+    margin-right: 75px;
+    width: 66%;
+}
+
+.header-left {
+    float: left;
+    flex-grow: 1;
+}
+
+.nav {
+    align-items: right;
+    display: flex;
+    flex: 00 auto;
+    flex: 10 auto;
+}
+
+
+/*--------------PRODUCTS-------------------*/
+#products {
     display: flex;
     justify-content: space-between;
-    align-content: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    margin-right: 50px; 
+    margin-top: 25px;
 }
 
-.products-row-1 div {
-    width: 100 px;
-    flex: auto;
-}
+/*.products-row-1, .products-row-2 {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-left: 50px;
+    margin-right: 50px; 
+    margin-top: 25px;
+}*/
