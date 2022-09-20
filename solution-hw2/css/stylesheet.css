@@ -1,0 +1,11 @@
+//placing images in a row and column grid
+.row {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+
+.row div {
+    width: 100 px;
+}
