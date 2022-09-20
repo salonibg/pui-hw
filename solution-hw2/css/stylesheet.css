@@ -1,11 +1,41 @@
-//placing images in a row and column grid
-.row {
+/*--------------BODY-------------------*/
+body {
+    margin-left: 50px;
+    margin-right: 50px; 
+    font-family: sans-serif;
+}
+
+/*--------------CONTAINER-------------------*/
+#container {
+    width: 1200px;
+    margin: 0px auto;
+}
+
+/*--------------HEADER-------------------*/
+#header {
+    display: flex;
+    width: inherit;
+    height: 100px;
+    margin-top: 15px;
+    position: fixed;
+    top: 0px;
+    background-color: #ffffff;
+
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 00auto;width:150px;
+    flex: 10auto;
+}
+
+/*--------------ROWS-------------------*/
+.products-row-1 {
     width: 500px;
     display: flex;
     justify-content: space-between;
     align-content: flex-start;
 }
 
-.row div {
+.products-row-1 div {
     width: 100 px;
+    flex: auto;
 }
