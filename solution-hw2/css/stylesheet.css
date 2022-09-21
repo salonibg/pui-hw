@@ -7,21 +7,20 @@ h1 {
 
 h2, label {
     font-family: sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: normal;
 }
 
+h3 {
+    font-family: sans-serif;
+    font-size: 12px;
+}
 
 a {
     font-family: sans-serif;
     font-weight: normal;
     text-decoration: none;
     color: #000000;
-}
-
-a:hover {
-    font-weight: bold;
-    background-color: yellow;
 }
 
 /*--------------BODY-------------------*/
@@ -69,6 +68,19 @@ hr {
     justify-content: right;
 }
 
+.main-page {
+    margin-right: 35px;
+}
+
+.cart-page {
+    margin-right: 25px;
+}
+
+a.select {
+    font-weight: bold;
+    background-color: yellow;
+}
+
 .overall-title {
     padding-left: 35px;
 }
@@ -98,6 +110,10 @@ hr {
 .card:hover {
     background-color: yellow;
   }
+
+a:hover {
+    font-weight: bold;
+}
 
 /*--------------DETAILS PAGE-------------------*/
 #full-box {
@@ -154,4 +170,43 @@ hr {
     font-size: 18px;
 }
 
+/*--------------CART PAGE-------------------*/
+.page-content {
+    margin-top: 50px;
+}
+.summary-item {
+    display: flex;
+    margin: 0px 20px 0px 30px;
+}
 
+.summary-item img {
+    border: solid 3px #000000;
+    margin-right: 20px;
+}
+
+
+.summary-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 130px;
+}
+
+.checkout {
+    display: flex;
+    justify-content: right;
+}
+
+.checkout button {
+    background-color: yellow;
+    color: black;
+    border: 3px solid black;
+    padding: 10px 12px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
