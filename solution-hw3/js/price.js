@@ -15,6 +15,7 @@ let packOptions = [
 
 var newPrice = 2.49;
 
+
 //populate glaze dropdown
 let selectGlaze = document.querySelector('#glazingOptions');
 
@@ -25,7 +26,6 @@ for (var i = 0; i < glazingAdditions.length; i++) {
     option.value = i;
     selectGlaze.add(option);
 }
-
 
 //populate pack dropdown
 let selectPack = document.querySelector('#packingOptions');
@@ -39,26 +39,26 @@ for (var i = 0; i < packOptions.length; i++) {
 }
 
 
+//update total price according to glaze option
 function glazingChange(element) {
-    // get value of selected glazing option
     const priceChange = element.value;
-    
-  // add your code to do update the price ...
     newPrice = 2.49 + glazingAdditions[priceChange].addition;
-    
 }
 
+//update total price according to pack option
 function packChange(element) {
     const priceChange = element.value;
     newPrice = newPrice * packOptions[priceChange].addition;
 }
 
+
+//update displayed price based on user selection
 let customPrice = document.querySelector('#custom-price');
 
 function onSelectValueChange() {
     glazingChange(selectGlaze);
     packChange(selectPack);
-    customPrice.innerText = newPrice.toFixed(2);
+    customPrice.innerText = "$" + (newPrice.toFixed(2)).toString();
 }
 
 
@@ -66,6 +66,6 @@ function onSelectValueChange() {
 selectGlaze.addEventListener('change', onSelectValueChange);
 selectPack.addEventListener('change', onSelectValueChange);
 
-customPrice.innerText = newPrice;
+customPrice.innerText = "$" + newPrice.toString();
 
 
