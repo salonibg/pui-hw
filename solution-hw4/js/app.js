@@ -13,10 +13,24 @@ let packOptions = [
     {size: '12', addition: 10}
 ];
 
-var newPrice = 2.49;
 
+//parse url parameter
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+console.log(params);
+
+//extract roll information
+const rollType = params.get('roll')
+console.log(rollType);
+
+const imagePath = rolls[rollType].imageFile;
+console.log(imagePath);
+
+const price = rolls[rollType].basePrice;
+console.log(price)
 
 //populate glaze dropdown
+var newPrice = price;
 let selectGlaze = document.querySelector('#glazingOptions');
 
 for (var i = 0; i < glazingAdditions.length; i++) {
@@ -42,11 +56,11 @@ for (var i = 0; i < packOptions.length; i++) {
 //update total price according to glaze option
 function glazingChange(element) {
     const priceChange = element.value;
-    newPrice = 2.49 + glazingAdditions[priceChange].addition;
+    newPrice = price + glazingAdditions[priceChange].addition;
 }
 
 //update total price according to pack option
-function packChange(element) {
+function packingChange(element) {
     const priceChange = element.value;
     newPrice = newPrice * packOptions[priceChange].addition;
 }
@@ -57,9 +71,10 @@ let customPrice = document.querySelector('#custom-price');
 
 function onSelectValueChange() {
     glazingChange(selectGlaze);
-    packChange(selectPack);
+    packingChange(selectPack);
     customPrice.innerText = "$" + (newPrice.toFixed(2)).toString();
 }
+
 
 
 //when selected element changes, the display changes
@@ -69,9 +84,41 @@ selectPack.addEventListener('change', onSelectValueChange);
 customPrice.innerText = "$" + newPrice.toString();
 
 
+//update DOM elements
+const headerElement = document.querySelector('#main-title');
+headerElement.innerText = rollType + ' Cinnamon Roll';
+
+const coverImage = document.querySelector('#product');
+coverImage.src = './assets/' + imagePath;
+
+const initialPrice = document.querySelector('#custom-price');
+initialPrice.innerText = '$' + price.toString();
+
+
+
+//create empty cart and populate it
 var cart = [];
 
-const queryString = window.location.search;
-const params = new URLSearchParams(queryString);
-const rollType = params.get('roll');
+class Roll {
+    constructor(rollType, rollGlazing, packSize, basePrice) {
+        this.type = rollType;
+        this.glazing = rollGlazing;
+        this.size = packSize;
+        this.basePrice = basePrice;
+    }
+}
 
+
+function addToCart() {
+    const currentRoll = new Roll();
+    currentRoll.type = rollType;
+    //currentRoll.glazing = selectGlaze;
+    //currentRoll.size = selectPack.value.text;
+    currentRoll.basePrice = newPrice;
+
+    cart.push(currentRoll);
+    console.log(cart);
+}
+
+let buttonPress = document.querySelector('#cart-btn');
+buttonPress.addEventListener('click', event => {addToCart();});
