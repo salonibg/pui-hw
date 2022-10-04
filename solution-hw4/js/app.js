@@ -3,7 +3,7 @@ let glazingAdditions = [
     {choice: 'Keep original', addition: 0.0},
     {choice: 'Sugar milk', addition: 0.0},
     {choice: 'Vanilla milk', addition: 0.5},
-    {choice: 'Double chocoloate', addition: 1.5}
+    {choice: 'Double chocolate', addition: 1.5}
 ];
 
 let packOptions = [
@@ -96,7 +96,7 @@ initialPrice.innerText = '$' + price.toString();
 
 
 
-//create empty cart and populate it
+//create empty cart and Roll class
 var cart = [];
 
 class Roll {
@@ -108,12 +108,12 @@ class Roll {
     }
 }
 
-
+//add current roll details to cart when button is pressed
 function addToCart() {
     const currentRoll = new Roll();
     currentRoll.type = rollType;
-    //currentRoll.glazing = selectGlaze;
-    //currentRoll.size = selectPack.value.text;
+    currentRoll.glazing = selectGlaze.options[selectGlaze.selectedIndex].text;
+    currentRoll.size = selectPack.options[selectPack.selectedIndex].text;
     currentRoll.basePrice = newPrice;
 
     cart.push(currentRoll);
