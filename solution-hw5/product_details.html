@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Product Details</title>
+    <link rel="stylesheet" href="./css/stylesheet.css" type="text/css"/>
+    <script defer src="js/rollsData.js"></script>
+    <script defer src="js/app.js"></script>
+  </head>
+
+  <body>
+    <div id="header">
+        <div class="header-left">
+          <a href="./index.html"><img src="./logo-01.svg" width="300" alt="Logo"/></a>
+        </div>
+
+        <div class="header-right">
+
+          <div class="nav">
+
+            <div class="main-page">
+              <a class="select" href="./index.html">PRODUCTS</a> 
+            </div>
+            <div class="cart-page">
+              <a href="./shopping_cart.html">CART</a>
+            </div>
+
+          </div>
+          <hr>
+
+          <div class="overall-title">
+            <br>
+            <h1 id="main-title">none</h1>
+          </div>
+        </div>
+      </div>
+
+
+    <div id="full-box">
+        <div class="left-box">
+            <img id="product" src="" width="650" alt="Original" />
+        </div>
+    
+        <div class="right-box">
+            <div>
+                <h2>Customize our delicious, hand-made cinammon roll to your liking!</h2>
+            </div>
+    
+            <div class="dropdown">
+                <label for="glazingOptions">Glazing:</label><br>
+                    <select id="glazingOptions"
+                    onchange="glazingChange(this)">
+                    </select>
+                <br><br>
+            
+                <label for="packingOptions">Pack size:</label><br>
+                  <select id="packingOptions"
+                    onchange="packingChange(this)">
+                  </select>
+                <br><br><br>
+            </div>
+
+            <div class="add">
+                <h2 id="custom-price">none</h2>
+                <button type="button" id="cart-btn">Add to cart</button>
+            </div>
+
+        </div>
+    </div>
+
+  </body>
+
+</html>
