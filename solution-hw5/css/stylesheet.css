@@ -190,6 +190,10 @@ a:hover {
     justify-content: space-between;
 }
 
+template {
+    float: right;
+}
+
 .roll {
     display: flex;
     justify-content: space-between;

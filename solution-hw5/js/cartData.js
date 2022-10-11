@@ -34,7 +34,6 @@ class Roll {
 //create and populate cart 
 var cart = [];
 var totalPrice = 0.0;
-console.log(typeof totalPrice);
 
 function showRolls(rollItem) {
     const rollName = rollItem.type;
@@ -72,8 +71,10 @@ function populateCart() {
 
     console.log(cart);
     for (let i = 0; i < cart.length; i++) {
+        //const itemTemp = new Roll();
+        //itemTemp.type = "Hello";
         showRolls(cart[i]);
-    }
+        }
 
     const totalCartPrice = document.querySelector('#cartTotalPrice');
     totalCartPrice.innerText =  "$" + (totalPrice.toFixed(2)).toString();
