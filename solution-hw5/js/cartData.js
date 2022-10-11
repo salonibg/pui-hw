@@ -51,14 +51,13 @@ function populateCart() {
 populateCart();
 
 
-//create and populate display
+//create display according to template
 function showRolls(rollItem) {
     var temp = document.querySelector("#rolls-template");
     var clon = temp.content.cloneNode(true);
     rollItem.element = clon.querySelector('.summary-text');
 
     const btnDelete = rollItem.element.querySelector('.remove-btn');
-    console.log(btnDelete);
     btnDelete.addEventListener('click', () => {
         removeFromCart(rollItem);
     });
@@ -91,6 +90,7 @@ function updateDisplay(rollItem) {
     totalCartPrice.innerText =  "$" + (totalPrice.toFixed(2)).toString();
 };
 
+//update total price when an item is removed
 function updatePrice(rollItem) {
     const totalCartPrice = document.querySelector('#cartTotalPrice');
     if (cart.length == 0) {
@@ -102,12 +102,14 @@ function updatePrice(rollItem) {
     };
 };
 
+//remove button functionality
 function removeFromCart(rollItem) {
     updatePrice(rollItem);
     rollItem.element.remove();
     cart.delete(rollItem);
 };
 
+//populate display
 for (let i = 0; i < cart.length; i++) {
     showRolls(cart[i]);
 }
