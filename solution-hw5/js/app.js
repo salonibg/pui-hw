@@ -95,6 +95,8 @@ coverImage.src = './assets/' + imagePath;
 const initialPrice = document.querySelector('#custom-price');
 initialPrice.innerText = '$' + price.toString();
 
+//create cart
+var cart = [];
 
 //create Roll class
 class Roll {
