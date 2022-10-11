@@ -124,6 +124,7 @@ a:hover {
     flex: 00 auto;width: 70%;
     flex: 10 auto;width: 100%;
 }
+
 .left-box {
     display: flex;
     align-items: center;
@@ -171,9 +172,6 @@ a:hover {
 }
 
 /*--------------CART PAGE-------------------*/
-.page-content {
-    margin-top: 50px;
-}
 
 .summary-item {
     display: flex;
@@ -188,15 +186,22 @@ a:hover {
 .summary-text {
     display: flex;
     justify-content: space-between;
-}
-
-template {
     float: right;
+    width: 70%;
+    margin-right: 30px;
 }
 
-.roll {
+.page-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    width: 67%;
+    position: fixed;
+    bottom: 8px;
+    right: 50px;
+}
+
+.template {
+    margin-top: 50px;
 }
 
 .total {
@@ -220,8 +225,9 @@ template {
     display: inline-block;
 }
 
-.card button {
+.card1 button {
     background-color: transparent;
     border: none;
     font-weight: bold;
+    padding: 0px 0px;
 }

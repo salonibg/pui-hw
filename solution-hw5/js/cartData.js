@@ -35,6 +35,20 @@ class Roll {
 var cart = [];
 var totalPrice = 0.0;
 
+function populateCart() {
+    for (let i = 0; i < cartItems.length; i++) {
+        const item = new Roll();
+        item.type = cartItems[i].name;
+        item.glazing = cartItems[i].glazing;
+        item.size = cartItems[i].packSize;
+        item.basePrice = rolls[cartItems[i].name].basePrice
+        cart.push(item);
+    }
+};
+
+populateCart();
+
+//create and populate display
 function showRolls(rollItem) {
     const rollName = rollItem.type;
     const rollGlaze = rollItem.glazing;
@@ -58,28 +72,24 @@ function showRolls(rollItem) {
     document.body.appendChild(clon);
 };
 
-
-function populateCart() {
-    for (let i = 0; i < cartItems.length; i++) {
-        const item = new Roll();
-        item.type = cartItems[i].name;
-        item.glazing = cartItems[i].glazing;
-        item.size = cartItems[i].packSize;
-        item.basePrice = rolls[cartItems[i].name].basePrice
-        cart.push(item);
-    }
-
+function populateCartDisplay() {
     console.log(cart);
     for (let i = 0; i < cart.length; i++) {
-        //const itemTemp = new Roll();
-        //itemTemp.type = "Hello";
         showRolls(cart[i]);
-        }
+    }
 
     const totalCartPrice = document.querySelector('#cartTotalPrice');
     totalCartPrice.innerText =  "$" + (totalPrice.toFixed(2)).toString();
 };
 
-populateCart();
 
+populateCartDisplay();
+
+function removeFromCart() {
+    //cart.filter();
+};
+
+//remove button functionality
+let removeItem = document.querySelector('#remove-btn');
+removeItem.addEventListener('click', event => {removeFromCart();});
 

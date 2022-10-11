@@ -56,7 +56,7 @@ for (var i = 0; i < packOptions.length; i++) {
 //update total price according to glaze option
 function glazingChange(element) {
     const priceChange = element.value;
-    console.log(priceChange);
+    //console.log(priceChange);
     newPrice = price + glazingAdditions[priceChange].addition;
 }
 
