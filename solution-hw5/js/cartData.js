@@ -36,22 +36,29 @@ var cart = [];
 var totalPrice = 0.0;
 console.log(typeof totalPrice);
 
-function displayRoll(rollItem) {
+function showRolls(rollItem) {
     const rollName = rollItem.type;
     const rollGlaze = rollItem.glazing;
     const rollPack = rollItem.size;
 
-    const coverPic = document.querySelector('#cartImg');
+    var temp = document.getElementsByTagName("template")[0];
+    var clon = temp.content.cloneNode(true);
+
+    const coverPic = clon.querySelector('#cartImg');
     const picPath = rolls[rollName].imageFile;
     coverPic.src = './assets/' + picPath;
 
-    const itemDescript = document.querySelector('#cartItemDescript');
+    const itemDescript = clon.querySelector('#cartItemDescript');
     itemDescript.innerText = rollName + " Cinnamon Roll\nGlazing: " + rollGlaze + "\nPack Size: " + rollPack;
 
-    const itemPrice = document.querySelector('#cartItemPrice');
+    const itemPrice = clon.querySelector('#cartItemPrice');
     var newPrice = (rollItem.basePrice + glazingAdditions[rollGlaze].addition) * packOptions[rollPack].addition;
     itemPrice.innerText = "$" + (newPrice.toFixed(2)).toString();
-}
+    totalPrice += newPrice;
+
+    document.body.appendChild(clon);
+};
+
 
 function populateCart() {
     for (let i = 0; i < cartItems.length; i++) {
@@ -65,11 +72,11 @@ function populateCart() {
 
     console.log(cart);
     for (let i = 0; i < cart.length; i++) {
-        displayRoll(cart[i]);
+        showRolls(cart[i]);
     }
 
     const totalCartPrice = document.querySelector('#cartTotalPrice');
-    totalCartPrice.innerText = "$" + totalPrice.toString();
+    totalCartPrice.innerText =  "$" + (totalPrice.toFixed(2)).toString();
 };
 
 populateCart();
