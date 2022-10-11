@@ -186,9 +186,16 @@ a:hover {
 .summary-text {
     display: flex;
     justify-content: space-between;
-    float: right;
-    width: 70%;
     margin-right: 30px;
+}
+
+#rolls-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    float: right;
+    width: 72%;
+    margin-top: 50px;
 }
 
 .page-content {
@@ -197,11 +204,7 @@ a:hover {
     width: 67%;
     position: fixed;
     bottom: 8px;
-    right: 50px;
-}
-
-.template {
-    margin-top: 50px;
+    right: 40px;
 }
 
 .total {

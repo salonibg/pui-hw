@@ -37,23 +37,24 @@
       </div>
     </div>
 
-    <template>
-      <div class="template">
-        <div class="summary-text">
-          <div class="summary-item">
-            <div class="card1">
-              <img id="cartImg" src="" width="80" alt="Original"/>
-              <h3><button type="button" id="remove-btn">Remove</button></h3>
-            </div>
-            <p id="cartItemDescript">none</p>
-          </div>
+      <div id="rolls-list">
+        <template id="rolls-template">
+            <div class="summary-text">
+              <div class="summary-item">
+                <div class="card1">
+                  <img id="cartImg" src="" width="80" alt="Original"/>
+                  <h3><button type="button" class="remove-btn" onclick="removeFromCart(this)">Remove</button></h3>
+                </div><!-- END card1 -->
+                <p id="cartItemDescript">none</p>
+              </div><!-- END summary-item -->
+      
+              <div>
+                <h2 id="cartItemPrice">none</h2>
+              </div>
+            </div><!-- END summary-text -->
+        </template><!-- END rolls-template -->
+      </div><!-- END rolls-list -->
   
-          <div>
-            <h2 id="cartItemPrice">none</h2>
-          </div>
-        </div>
-      </div>
-    </template>
 
     <div class="page-content">
       <hr>

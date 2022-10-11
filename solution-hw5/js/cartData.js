@@ -28,6 +28,8 @@ class Roll {
         this.glazing = rollGlazing;
         this.size = packSize;
         this.basePrice = basePrice;
+
+        this.element = null;
     }
 }
 
@@ -48,48 +50,73 @@ function populateCart() {
 
 populateCart();
 
+
 //create and populate display
 function showRolls(rollItem) {
+    var temp = document.querySelector("#rolls-template");
+    var clon = temp.content.cloneNode(true);
+    rollItem.element = clon.querySelector('.summary-text');
+
+    const btnDelete = rollItem.element.querySelector('.remove-btn');
+    console.log(btnDelete);
+    btnDelete.addEventListener('click', () => {
+        removeFromCart(rollItem);
+    });
+
+    const rollsListElement = document.querySelector('#rolls-list');
+    rollsListElement.prepend(rollItem.element);
+
+    updateDisplay(rollItem);
+};
+
+function updateDisplay(rollItem) {
+
     const rollName = rollItem.type;
     const rollGlaze = rollItem.glazing;
     const rollPack = rollItem.size;
 
-    var temp = document.getElementsByTagName("template")[0];
-    var clon = temp.content.cloneNode(true);
-
-    const coverPic = clon.querySelector('#cartImg');
+    const coverPic = rollItem.element.querySelector('#cartImg');
     const picPath = rolls[rollName].imageFile;
     coverPic.src = './assets/' + picPath;
 
-    const itemDescript = clon.querySelector('#cartItemDescript');
+    const itemDescript = rollItem.element.querySelector('#cartItemDescript');
     itemDescript.innerText = rollName + " Cinnamon Roll\nGlazing: " + rollGlaze + "\nPack Size: " + rollPack;
 
-    const itemPrice = clon.querySelector('#cartItemPrice');
+    const itemPrice = rollItem.element.querySelector('#cartItemPrice');
     var newPrice = (rollItem.basePrice + glazingAdditions[rollGlaze].addition) * packOptions[rollPack].addition;
     itemPrice.innerText = "$" + (newPrice.toFixed(2)).toString();
     totalPrice += newPrice;
-
-    document.body.appendChild(clon);
-};
-
-function populateCartDisplay() {
-    console.log(cart);
-    for (let i = 0; i < cart.length; i++) {
-        showRolls(cart[i]);
-    }
 
     const totalCartPrice = document.querySelector('#cartTotalPrice');
     totalCartPrice.innerText =  "$" + (totalPrice.toFixed(2)).toString();
 };
 
-
-populateCartDisplay();
-
-function removeFromCart() {
-    //cart.filter();
+function updatePrice(rollItem) {
+    const totalCartPrice = document.querySelector('#cartTotalPrice');
+    if (cart.length == 0) {
+        totalCartPrice.innerText =  "$0.00"
+    } else {
+        var priceDeduction = (rollItem.basePrice + glazingAdditions[rollItem.glazing].addition) * packOptions[rollItem.size].addition;
+        totalPrice -= priceDeduction;
+        totalCartPrice.innerText =  "$" + (totalPrice.toFixed(2)).toString();
+    };
 };
 
-//remove button functionality
-let removeItem = document.querySelector('#remove-btn');
-removeItem.addEventListener('click', event => {removeFromCart();});
+function removeFromCart(rollItem) {
+    updatePrice(rollItem);
+    rollItem.element.remove();
+    cart.delete(rollItem);
+};
+
+for (let i = 0; i < cart.length; i++) {
+    showRolls(cart[i]);
+}
+
+
+
+
+
+
+
+
 
