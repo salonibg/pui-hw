@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Product Gallery</title>
+
+    <link rel="stylesheet" href="./css/stylesheet.css" type="text/css"/>
+    <script defer src="js/rollsData.js"></script>
+    <script defer src="js/cartData.js"></script>
+  </head>
+  
+  
+  <body>
+    <div id="header">
+
+      <div class="header-left">
+        <a href="./index.html"><img src="./logo-01.svg" width="300" alt="Logo"/></a>
+      </div>
+
+      <div class="header-right">
+
+        <div class="nav">
+          <div class="main-page">
+            <a href="./index.html">PRODUCTS</a> 
+          </div>
+          <div class="cart-page">
+            <a class="select" href="./shopping_cart.html">CART</a>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="overall-title">
+          <br>
+          <h1>Shopping cart</h1>
+        </div>
+      </div>
+    </div>
+
+    <template>
+      <div class="template">
+        <div class="summary-text">
+          <div class="summary-item">
+            <div class="card1">
+              <img id="cartImg" src="" width="80" alt="Original"/>
+              <h3><button type="button" id="remove-btn" onclick="removeFromCart(this)">Remove</button></h3>
+            </div>
+            <p id="cartItemDescript">none</p>
+          </div>
+  
+          <div>
+            <h2 id="cartItemPrice">none</h2>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <div class="page-content">
+      <div class="summary-text">
+        <div class="summary-item">
+          <div class="card1">
+            <img id="cartImg0" src="" width="80" alt="Original"/>
+            <h3><button type="button" id="remove-btn0" onclick="removeFromCart(this)">Remove</button></h3>
+          </div>
+          <p id="cartItemDescript0">none</p>
+        </div>
+
+        <div>
+          <h2 id="cartItemPrice0">none</h2>
+        </div>
+      </div>
+
+      <div class="summary-text">
+        <div class="summary-item">
+          <div class="card1">
+            <img id="cartImg1" src="" width="80" alt="Original"/>
+            <h3><button type="button" id="remove-btn1" onclick="removeFromCart(this)">Remove</button></h3>
+          </div>
+          <p id="cartItemDescript1">none</p>
+        </div>
+
+        <div>
+          <h2 id="cartItemPrice1">none</h2>
+        </div>
+      </div>
+
+      <div class="summary-text">
+        <div class="summary-item">
+          <div class="card1">
+            <img id="cartImg2" src="" width="80" alt="Original"/>
+            <h3><button type="button" id="remove-btn2" onclick="removeFromCart(this)">Remove</button></h3>
+          </div>
+          <p id="cartItemDescript2">none</p>
+        </div>
+
+        <div>
+          <h2 id="cartItemPrice2">none</h2>
+        </div>
+      </div>
+
+      <div class="summary-text">
+        <div class="summary-item">
+          <div class="card1">
+            <img id="cartImg3" src="" width="80" alt="Original"/>
+            <h3><button type="button" id="remove-btn3" onclick="removeFromCart(this)">Remove</button></h3>
+          </div>
+          <p id="cartItemDescript3">none</p>
+        </div>
+
+        <div>
+          <h2 id="cartItemPrice3">none</h2>
+        </div>
+      </div>
+
+      <hr>
+      <div class="total">
+        <h2>Total</h2>
+        <h2 id="cartTotalPrice">none</h2>
+      </div>
+    
+      <div class="checkout">
+        <button type="button">Checkout</button>
+      </div>
+    </div>
+
+  </body>
+</html>
+    
