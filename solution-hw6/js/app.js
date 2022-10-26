@@ -23,7 +23,6 @@ class Roll {
     }
 }
 
-
 //parse url parameter
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
@@ -60,7 +59,6 @@ for (var i = 0; i < packOptions.length; i++) {
 //update total price according to glaze option
 function glazingChange(element) {
     const priceChange = element.value;
-    //console.log(priceChange);
     newPrice = price + glazingAdditions[priceChange].addition;
 }
 
@@ -99,16 +97,19 @@ const initialPrice = document.querySelector('#custom-price');
 initialPrice.innerText = '$' + price.toString();
 
 
+var cart = [];
+
 //retrieve cart from local storage if cart exists
 function retrieveFromLocalStorage() {
     const cartArrayString = localStorage.getItem('storedCart');
     const cartArray = JSON.parse(cartArrayString);
-
-    return cartArray;
+    cart = cartArray;
 }
 
-if (localStorage.getItem('storedCart') != null) {
-    const cart = retrieveFromLocalStorage();
+
+
+if (localStorage.getItem("storedCart") != "null") {
+    retrieveFromLocalStorage();
 } else {
     var cart = [];
 }
@@ -131,11 +132,8 @@ buttonPress.addEventListener('click', event => {addToCart();});
 
 //save to local storage
 function saveToLocalStorage(cart) {
-    //const cartArray = Array.from(cart);
     const cartArrayString = JSON.stringify(cart);
-    //localStorage.setItem('storedCart', cartArrayString);
-    var c = [];
-    localStorage.setItem('storedCart', c);
+    localStorage.setItem('storedCart', cartArrayString);
 
     console.log(cartArrayString);
 }

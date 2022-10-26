@@ -13,13 +13,13 @@ let packOptions = {
     12: {addition: 10}
 };
 
-
 //create totalPrice variable
+var cart = [];
 var totalPrice = 0.0;
 
 //retrieve cart from local storage if cart exists
-if (localStorage.getItem('storedCart') != null) {
-    var cart = retrieveFromLocalStorage();
+if (localStorage.getItem('storedCart') != "null") {
+    retrieveFromLocalStorage();
     for (const item of cart) {
         showRolls(item);
     }
@@ -31,14 +31,7 @@ if (localStorage.getItem('storedCart') != null) {
 function retrieveFromLocalStorage() {
     const cartArrayString = localStorage.getItem('storedCart');
     const cartArray = JSON.parse(cartArrayString);
-
-    /*for (const item of cartArray) {
-        var cart = [];
-        cart.push(item);
-    }
-    console.log(cart);*/
-
-    return cartArray;
+    cart = cartArray;
 }
 
 
@@ -95,20 +88,20 @@ function updatePrice(rollItem) {
 
 //remove button functionality
 function removeFromCart(rollItem) {
+    console.log(rollItem);
     updatePrice(rollItem);
     rollItem.element.remove();
-    cart.delete(rollItem);
+
+    const index = cart.indexOf(rollItem);
+    cart.splice(index, 1);
     
     saveToLocalStorage(cart);
 };
 
+//save cart to local storage
 function saveToLocalStorage(cart) {
-    //const cartArray = Array.from(cart);
-
     const cartArrayString = JSON.stringify(cart);
-    //localStorage.setItem('storedCart', cartArrayString);
-    var c = [];
-    localStorage.setItem('storedCart', c);
+    localStorage.setItem('storedCart', cartArrayString);
 
     console.log(cartArrayString);
 }
