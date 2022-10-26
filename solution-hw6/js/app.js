@@ -21,13 +21,8 @@ console.log(params);
 
 //extract roll information
 const rollType = params.get('roll')
-//console.log(rollType);
-
 const imagePath = rolls[rollType].imageFile;
-//console.log(imagePath);
-
 const price = rolls[rollType].basePrice;
-//console.log(price)
 
 //populate glaze dropdown
 var newPrice = price;
@@ -77,7 +72,6 @@ function onSelectValueChange() {
 }
 
 
-
 //when selected element changes, the display changes
 selectGlaze.addEventListener('change', onSelectValueChange);
 selectPack.addEventListener('change', onSelectValueChange);
@@ -95,8 +89,19 @@ coverImage.src = './assets/' + imagePath;
 const initialPrice = document.querySelector('#custom-price');
 initialPrice.innerText = '$' + price.toString();
 
-//create cart
-var cart = [];
+
+//retrieve cart from local storage
+function retrieveFromLocalStorage() {
+    const cartArrayString = localStorage.getItem('storedCart');
+    const cartArray = JSON.parse(cartArrayString);
+
+    for (const item of cartArray) {
+        var cart = [];
+        cart.push(item);
+    }
+
+    return cart;
+}
 
 //create Roll class
 class Roll {
@@ -110,6 +115,11 @@ class Roll {
 
 //add current roll details to cart when button is pressed
 function addToCart() {
+    if (localStorage.getItem('storedCart') != null) {
+        var cart = retrieveFromLocalStorage();
+    } else {
+        var cart = [];
+    }
     const currentRoll = new Roll();
     currentRoll.type = rollType;
     currentRoll.glazing = selectGlaze.options[selectGlaze.selectedIndex].text;
@@ -117,11 +127,21 @@ function addToCart() {
     currentRoll.basePrice = newPrice;
 
     cart.push(currentRoll);
-    console.log(cart);
+    saveToLocalStorage(cart);
 }
 
 let buttonPress = document.querySelector('#cart-btn');
 buttonPress.addEventListener('click', event => {addToCart();});
+
+//save to local storage
+function saveToLocalStorage(cart) {
+    const cartArray = Array.from(cart);
+
+    const cartArrayString = JSON.stringify(cartArray);
+    console.log(cartArrayString);
+
+    localStorage.setItem('storedCart', cartArrayString);
+}
 
 
 

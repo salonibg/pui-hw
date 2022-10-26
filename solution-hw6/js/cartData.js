@@ -13,14 +13,6 @@ let packOptions = {
     12: {addition: 10}
 };
 
-//dictionary of cart items
-const cartItems = [
-    {name: "Original", glazing: "Sugar milk", packSize: 1},
-    {name: "Walnut", glazing: "Vanilla milk", packSize: 12},
-    {name: "Raisin", glazing: "Sugar milk", packSize: 3},
-    {name: "Apple", glazing: "Keep original", packSize: 3}
-];
-
 //create Roll class
 class Roll {
     constructor(rollType, rollGlazing, packSize, basePrice) {
@@ -34,21 +26,21 @@ class Roll {
 }
 
 //create and populate cart 
-var cart = [];
 var totalPrice = 0.0;
 
-function populateCart() {
-    for (let i = 0; i < cartItems.length; i++) {
-        const item = new Roll();
-        item.type = cartItems[i].name;
-        item.glazing = cartItems[i].glazing;
-        item.size = cartItems[i].packSize;
-        item.basePrice = rolls[cartItems[i].name].basePrice
+//retrieve cart from local storage
+function retrieveFromLocalStorage() {
+    const cartArrayString = localStorage.getItem('storedCart');
+    const cartArray = JSON.parse(cartArrayString);
+
+    for (const item of cartArray) {
+        var cart = [];
         cart.push(item);
     }
-};
+    console.log(cart);
 
-populateCart();
+    return cart;
+}
 
 
 //create display according to template
@@ -88,6 +80,7 @@ function updateDisplay(rollItem) {
 
     const totalCartPrice = document.querySelector('#cartTotalPrice');
     totalCartPrice.innerText =  "$" + (totalPrice.toFixed(2)).toString();
+
 };
 
 //update total price when an item is removed
@@ -107,14 +100,30 @@ function removeFromCart(rollItem) {
     updatePrice(rollItem);
     rollItem.element.remove();
     cart.delete(rollItem);
+    
+
+    saveToLocalStorage(cart);
+
 };
 
-//populate display
-for (let i = 0; i < cart.length; i++) {
-    showRolls(cart[i]);
+function saveToLocalStorage(cart) {
+    const cartArray = Array.from(cart);
+
+    const cartArrayString = JSON.stringify(cartArray);
+    console.log(cartArrayString);
+
+    localStorage.setItem('storedCart', cartArrayString);
 }
 
 
+if (localStorage.getItem('storedCart') != null) {
+    var cart = retrieveFromLocalStorage();
+    for (const item of cart) {
+        showRolls(item);
+    }
+} else {
+    var cart = [];
+}
 
 
 
