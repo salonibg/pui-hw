@@ -1,1 +1,0 @@
-# Lab Exercise 3
