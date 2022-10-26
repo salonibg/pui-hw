@@ -13,11 +13,20 @@ let packOptions = [
     {size: '12', addition: 10}
 ];
 
+//Roll class
+class Roll {
+    constructor(rollType, rollGlazing, packSize, basePrice) {
+        this.type = rollType;
+        this.glazing = rollGlazing;
+        this.size = packSize;
+        this.basePrice = basePrice;
+    }
+}
+
 
 //parse url parameter
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
-console.log(params);
 
 //extract roll information
 const rollType = params.get('roll')
@@ -90,36 +99,23 @@ const initialPrice = document.querySelector('#custom-price');
 initialPrice.innerText = '$' + price.toString();
 
 
-//retrieve cart from local storage
+//retrieve cart from local storage if cart exists
 function retrieveFromLocalStorage() {
     const cartArrayString = localStorage.getItem('storedCart');
     const cartArray = JSON.parse(cartArrayString);
 
-    for (const item of cartArray) {
-        var cart = [];
-        cart.push(item);
-    }
-
-    return cart;
+    return cartArray;
 }
 
-//create Roll class
-class Roll {
-    constructor(rollType, rollGlazing, packSize, basePrice) {
-        this.type = rollType;
-        this.glazing = rollGlazing;
-        this.size = packSize;
-        this.basePrice = basePrice;
-    }
+if (localStorage.getItem('storedCart') != null) {
+    const cart = retrieveFromLocalStorage();
+} else {
+    var cart = [];
 }
+
 
 //add current roll details to cart when button is pressed
 function addToCart() {
-    if (localStorage.getItem('storedCart') != null) {
-        var cart = retrieveFromLocalStorage();
-    } else {
-        var cart = [];
-    }
     const currentRoll = new Roll();
     currentRoll.type = rollType;
     currentRoll.glazing = selectGlaze.options[selectGlaze.selectedIndex].text;
@@ -135,12 +131,13 @@ buttonPress.addEventListener('click', event => {addToCart();});
 
 //save to local storage
 function saveToLocalStorage(cart) {
-    const cartArray = Array.from(cart);
+    //const cartArray = Array.from(cart);
+    const cartArrayString = JSON.stringify(cart);
+    //localStorage.setItem('storedCart', cartArrayString);
+    var c = [];
+    localStorage.setItem('storedCart', c);
 
-    const cartArrayString = JSON.stringify(cartArray);
     console.log(cartArrayString);
-
-    localStorage.setItem('storedCart', cartArrayString);
 }
 
 

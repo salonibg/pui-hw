@@ -13,33 +13,32 @@ let packOptions = {
     12: {addition: 10}
 };
 
-//create Roll class
-class Roll {
-    constructor(rollType, rollGlazing, packSize, basePrice) {
-        this.type = rollType;
-        this.glazing = rollGlazing;
-        this.size = packSize;
-        this.basePrice = basePrice;
 
-        this.element = null;
-    }
-}
-
-//create and populate cart 
+//create totalPrice variable
 var totalPrice = 0.0;
+
+//retrieve cart from local storage if cart exists
+if (localStorage.getItem('storedCart') != null) {
+    var cart = retrieveFromLocalStorage();
+    for (const item of cart) {
+        showRolls(item);
+    }
+} else {
+    var cart = [];
+}
 
 //retrieve cart from local storage
 function retrieveFromLocalStorage() {
     const cartArrayString = localStorage.getItem('storedCart');
     const cartArray = JSON.parse(cartArrayString);
 
-    for (const item of cartArray) {
+    /*for (const item of cartArray) {
         var cart = [];
         cart.push(item);
     }
-    console.log(cart);
+    console.log(cart);*/
 
-    return cart;
+    return cartArray;
 }
 
 
@@ -61,7 +60,6 @@ function showRolls(rollItem) {
 };
 
 function updateDisplay(rollItem) {
-
     const rollName = rollItem.type;
     const rollGlaze = rollItem.glazing;
     const rollPack = rollItem.size;
@@ -101,29 +99,21 @@ function removeFromCart(rollItem) {
     rollItem.element.remove();
     cart.delete(rollItem);
     
-
     saveToLocalStorage(cart);
-
 };
 
 function saveToLocalStorage(cart) {
-    const cartArray = Array.from(cart);
+    //const cartArray = Array.from(cart);
 
-    const cartArrayString = JSON.stringify(cartArray);
+    const cartArrayString = JSON.stringify(cart);
+    //localStorage.setItem('storedCart', cartArrayString);
+    var c = [];
+    localStorage.setItem('storedCart', c);
+
     console.log(cartArrayString);
-
-    localStorage.setItem('storedCart', cartArrayString);
 }
 
 
-if (localStorage.getItem('storedCart') != null) {
-    var cart = retrieveFromLocalStorage();
-    for (const item of cart) {
-        showRolls(item);
-    }
-} else {
-    var cart = [];
-}
 
 
 
