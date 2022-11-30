@@ -94,6 +94,11 @@
     opacity: 1;
   }
 
+/*--------------WORK-------------------*/
+#work {
+    display: flex;
+}
+
 /*--------------FOOTER-------------------*/
 #footer {
     display: flex;
