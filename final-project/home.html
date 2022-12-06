@@ -3,45 +3,65 @@
 
   <head>
     <title>Home</title>
-    <link rel="stylesheet" href="./css/stylesheet.css" type="text/css"/>
-    <script defer src="js/cardData.js"></script>
+    <link rel="stylesheet" href="./css/home_stylesheet.css" type="text/css"/>
+    <script defer src="js/app.js"></script>
   </head>
   
-  
+  <!--Header-->
   <body>
     <div id="header">
-      <a href="./home.html"><img src="./assets/name_logo.png" width="200" alt="Logo"/></a>
+      <a href="./home.html"><img src="./assets/name_logo.png" width="150" alt="Logo"/></a>
       <nav>
         <a href="./about.html">ABOUT</a>
         <a href="./assets/uiux_resume.pdf">RESUME</a>
       </nav>
     </div>
 
-    <div id="intro">
-      <h1>Hi, I'm Saloni!</h1>
-      <h3>A designer exploring the intersection of the physical and virtual world in order to create experiences that deliver value</h3>
-    </div>
-
-    <label class="toggle">
-      <input type="checkbox">
-      <span class="slider"></span>
     
-      <span class="labels" data-on="Featured" data-off="All"></span>
-    </label>
-
-    <div id="work">
-      <div class="card">
-        <img id="cover_img" src="./assets/rect.png" width="650" alt="" />
-        <h2 id="project_title">title</h2>
-      </div>
-
-      <div class="card">
-        <img id="cover_img" src="./assets/rect2.png" width="650" alt="" />
-        <h2 id="project_title">title</h2>
-      </div>
-      
+    <!--Introduction-->
+    <div id="intro">
+      <h1>Hello!</h1>
+      <h3>I'm Saloni, A designer exploring the intersection of the physical and virtual world in order to create experiences that deliver value</h3>
     </div>
 
+
+    <!--Toggle-->
+    <div id="toggle">
+      <div class="button r" id="button-1">
+        <input type="checkbox" class="checkbox" />
+        <div class="knobs"></div>
+        <div class="layer"></div>
+      </div>
+    </div>
+    
+    <!--Timeline-->
+    <div>
+        <ul>
+          <li>
+            <time>Dec 2022</time>
+            <a href="./project1.html"><div id="featured">
+              <img id="cover_img" src="./assets/mobile app cover.png" width="655" height="400" alt="" />
+              <h2 id="project_title">Mobile App</h2>
+            </div></a>
+          </li>
+          <li>
+            <time>Aug 2022</time>
+            <a href="./project2.html"><div>
+              <img id="cover_img" src="./assets/amazon cover.png" width="655" height="400" alt="" />
+              <h2 id="project_title">Amazon</h2>
+            </div></a>
+          </li>
+          <li>
+            <time>May 2022</time>
+            <a href="./project3.html"><div id="featured">
+              <img id="cover_img" src="./assets/resMed cover.png" width="655" height="400" alt="" />
+              <h2 id="project_title">ResMed</h2>
+            </div></a>
+          </li>
+        </ul>
+      </div>
+
+    <!--Footer-->
     <div id="footer">
       <a href="mailto:salonigandhi439@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/saloni-gandhi-8b94331a1/">LinkedIn</a>

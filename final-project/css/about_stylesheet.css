@@ -1,0 +1,12 @@
+/*--------------HEADER-------------------*/
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+/*--------------INTRODUCTION-------------------*/
+#introduction {
+    display: flex;
+    flex-direction: row;
+}
