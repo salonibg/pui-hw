@@ -1,35 +1,43 @@
+/*--------------DECLARATIONS-------------------*/
+@font-face {
+  font-family: darkerGrotesque;
+  src: url(md_grotesk.woff);
+}
+
 /*--------------HEADER-------------------*/
 #header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    background-color: #FBE7E9;
+    padding: 30px 30px 30px 30px;
 }
 
-nav {
-  margin-right: 30px;
-}
 
 nav a {
-  font-weight: 700;
+  font-weight: 550;
+  font-size: 25px;
   text-decoration: none;
   padding: 10px 10px;
-  color: #804292;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'helvetica';
+  font-stretch: 85%;
+  background: -webkit-linear-gradient(#DA2533, #7F4293);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*--------------INTRODUCTION-------------------*/
 #intro {
-  padding-top: 20px;
+  
+  padding: 150px 30px 0px 30px;
+  background-color: #FBE7E9;
+
+  font-size: 35px;
 }
 
 #intro h1 {
-  font-size: 80px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-#intro h3 {
-  font-size: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #7F4293;
 }
 
 /*--------------TOGGLE-------------------*/
