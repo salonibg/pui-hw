@@ -1,3 +1,12 @@
+body {
+  display: flex;
+  flex-direction: column;
+  font-family:'Times New Roman', Times, serif;
+  color: #b3315c;
+  width: 1;
+}
+
+
 /*--------------HEADER-------------------*/
 #header {
     display: flex;
@@ -177,14 +186,6 @@ nav a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  font-family:'Times New Roman', Times, serif;
-  color: #b3315c;
-  width: 100%;
 }
 
 

@@ -1,6 +1,7 @@
 //TIMELINE
 var items = document.querySelectorAll("li");
 var featured_items = document.querySelectorAll("#featured");
+var total = items.length;
 
 var current_items = featured_items;
 
@@ -29,10 +30,10 @@ function callbackFunc() {
   }
 
   function cardDisplay() {
-    if (current_items.length == featured_items.length) {
-      current_items = items;
-    } else {
+    if (current_items.length == total) {
       current_items = featured_items;
+    } else {
+      current_items = items;
     }
     callbackFunc();
   }
