@@ -206,9 +206,9 @@ ul li:nth-child(odd)::after {
   left:50%;
   transform: translate3d(-250%, -800%, 0);
   bottom: 0;
-  }
+}
 
-  ul li:nth-child(even)::after {
+ul li:nth-child(even)::after {
     background: #DA2533;
     content: '';
     width: 25px;
@@ -218,7 +218,7 @@ ul li:nth-child(odd)::after {
     left:50%;
     transform: translate3d(130%, -800%, 0);
     bottom: 0;
-    }
+  }
 
 
 ul li div {
@@ -235,7 +235,10 @@ ul li div {
 
 ul li div h2 {
   padding-top: 15px;
+  font-size: 35px;
+  color: #7F4293;
 }
+
 
 ul li:nth-child(even) div {
   left: 75px;
@@ -245,12 +248,22 @@ ul li:nth-child(odd) div {
   left: -755px;
 }
 
-time {
+ul li:nth-child(odd) time {
   font-weight: bold;
   font-size: 18px;
   display: block;
   margin-bottom: 10px;
   padding-left: 15px;
+  transform: translate3d(-80px, 300px, 0);
+}
+
+ul li:nth-child(even) time {
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  transform: translate3d(12px, 300px, 0);
 }
 
 
@@ -267,6 +280,7 @@ ul li.show div {
   visibility: visible;
   opacity: 1;
 }
+
 
 @media screen and (max-width: 900px) {
   ul li div {
@@ -291,4 +305,8 @@ ul li.show div {
     background-color: #FBE7E9;
     padding: 30px 30px 30px 30px;
     justify-content: right;
+}
+
+#icons {
+  padding: 0 10px;
 }
