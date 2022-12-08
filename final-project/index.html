@@ -20,36 +20,29 @@
     <!--Introduction-->
     <div id="intro">
       <h1>Hello! I'm Saloni, an aspiring product designer</h1>
-    </div>
-
-    <!--Arrow-->
-    <div class="wrapper">
-      <a href="#service">
-        <div class="arrow">
-          <ul>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-      </a>
-    </div>
-
-
-    <!--Toggle-->
-    <div id="toggle">
-      <div class="button r" id="button-1">
-        <input type="checkbox" class="checkbox" />
-        <div class="knobs"></div>
-        <div class="layer"></div>
+      <div class="container">
+        <a data-scroll href="#toggle">
+          <div class="arrow"></div>
+        </a>
       </div>
     </div>
+
+    <div id="main-content">
+      <!--Toggle-->
+      <div id="toggle">
+        <div class="button r" id="button-1">
+          <input type="checkbox" class="checkbox" />
+          <div class="knobs"></div>
+          <div class="layer"></div>
+        </div>
+      </div>
     
-    <!--Timeline-->
-    <div>
+      <!--Timeline-->
+      <div id="timeline">
         <ul>
           <li>
             <time>Dec 2022</time>
-            <a href="./project1.html"><div id="featured">
+            <a href="./project1.html"><div>
               <img id="cover_img" src="./assets/mobile app cover.png" width="655" height="400" alt="" />
               <h2 id="project_title">Mobile App</h2>
             </div></a>
@@ -63,18 +56,27 @@
           </li>
           <li>
             <time>May 2022</time>
-            <a href="./project3.html"><div id="featured">
+            <a href="./project3.html"><div>
               <img id="cover_img" src="./assets/resMed cover.png" width="655" height="400" alt="" />
               <h2 id="project_title">ResMed</h2>
             </div></a>
           </li>
         </ul>
       </div>
+    </div>
 
     <!--Footer-->
     <div id="footer">
-      <a href="mailto:salonigandhi439@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/saloni-gandhi-8b94331a1/">LinkedIn</a>
+      <div>
+        <a href="mailto:salonigandhi439@gmail.com">
+          <img id="footer_icon" src="./assets/gmail icon.png" width="50" height="40" alt="" />
+        </a>
+      </div>
+      <div>
+        <a href="https://www.linkedin.com/in/saloni-gandhi-8b94331a1/">
+          <img id="footer_icon" src="./assets/linkedin icon.png" width="50" height="42" alt="" />
+        </a>
+      </div>
     </div>
     
   </body>
