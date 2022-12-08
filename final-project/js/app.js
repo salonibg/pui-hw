@@ -1,5 +1,13 @@
 //TIMELINE
 var items = document.querySelectorAll("li");
+var featured_items = document.querySelectorAll("#featured");
+
+var current_items = featured_items;
+
+console.log(items);
+console.log(featured_items);
+console.log(current_items);
+
 
 function isItemInView(item){
   var rect = item.getBoundingClientRect();
@@ -12,24 +20,25 @@ function isItemInView(item){
 }
 
 function callbackFunc() {
-    for (var i = 0; i < items.length; i++) {
+    for (var i = 0; i < current_items.length; i++) {
       var featured = document.getElementById("featured");
-      var toggle = document.getElementById("button-1");
-      console.log(toggle.knobs)
-      if (isItemInView(items[i]) ) {
-        //&& featured.style.display == 'block'
-        items[i].classList.add("show");
-        //featured.style.display = 'none';
-        //toggle.innerHTML = 'Featured';
-      } else {
-        //featured.style.display = 'block';
-        //toggle.innerHTML = 'All';
+      if (isItemInView(current_items[i]) ) {
+        current_items[i].classList.add("show");
       }
     }
+  }
+
+  function cardDisplay() {
+    if (current_items.length == featured_items.length) {
+      current_items = items;
+    } else {
+      current_items = featured_items;
+    }
+    callbackFunc();
   }
 
   // listen for events
   window.addEventListener("load", callbackFunc);
   window.addEventListener("resize", callbackFunc);
   window.addEventListener("scroll", callbackFunc);
-
+  
