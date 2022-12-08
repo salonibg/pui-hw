@@ -3,7 +3,6 @@ body {
   flex-direction: column;
   font-family:'Times New Roman', Times, serif;
   color: #b3315c;
-  width: 110%;
 }
 
 
@@ -199,7 +198,7 @@ ul li {
   width: 5px;
   background-color: #7F4293;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 0px;
 }
 
 ul li:nth-child(odd)::after {
@@ -210,7 +209,7 @@ ul li:nth-child(odd)::after {
   border-radius: 50%;
   position:absolute;
   left:50%;
-  transform: translate3d(-250%, -800%, 0);
+  transform: translate3d(-50%, -800%, 0);
   bottom: 0;
 }
 
@@ -222,7 +221,7 @@ ul li:nth-child(even)::after {
     border-radius: 50%;
     position:absolute;
     left:50%;
-    transform: translate3d(130%, -800%, 0);
+    transform: translate3d(-50%, -800%, 0);
     bottom: 0;
   }
 
@@ -241,7 +240,7 @@ ul li:nth-child(odd) time {
   display: block;
   margin-bottom: 10px;
   padding-left: 15px;
-  transform: translate3d(-80px, 300px, 0);
+  transform: translate3d(-70px, 250px, 0);
 }
 
 ul li:nth-child(even) time {
@@ -250,7 +249,7 @@ ul li:nth-child(even) time {
   display: block;
   margin-bottom: 10px;
   padding-left: 15px;
-  transform: translate3d(12px, 300px, 0);
+  transform: translate3d(12px, 250px, 0);
 }
 
 

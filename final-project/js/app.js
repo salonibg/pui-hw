@@ -1,13 +1,13 @@
 //TIMELINE
 var items = document.querySelectorAll("li");
-var featured_items = document.querySelectorAll("#featured");
-var total = items.length;
+//var featured_items = document.querySelectorAll("#featured");
+//var total = items.length;
 
-var current_items = featured_items;
+//var current_items = featured_items;
 
 console.log(items);
-console.log(featured_items);
-console.log(current_items);
+//console.log(featured_items);
+//console.log(current_items);
 
 
 function isItemInView(item){
@@ -21,10 +21,9 @@ function isItemInView(item){
 }
 
 function callbackFunc() {
-    for (var i = 0; i < current_items.length; i++) {
-      var featured = document.getElementById("featured");
-      if (isItemInView(current_items[i]) ) {
-        current_items[i].classList.add("show");
+    for (var i = 0; i < items.length; i++) {
+      if (isItemInView(items[i]) ) {
+        items[i].classList.add("show");
       }
     }
   }
