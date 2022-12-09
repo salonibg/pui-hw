@@ -1,14 +1,5 @@
 //TIMELINE
 var items = document.querySelectorAll("li");
-//var featured_items = document.querySelectorAll("#featured");
-//var total = items.length;
-
-//var current_items = featured_items;
-
-console.log(items);
-//console.log(featured_items);
-//console.log(current_items);
-
 
 function isItemInView(item){
   var rect = item.getBoundingClientRect();
@@ -41,4 +32,9 @@ function callbackFunc() {
   window.addEventListener("load", callbackFunc);
   window.addEventListener("resize", callbackFunc);
   window.addEventListener("scroll", callbackFunc);
-  
+
+//PROJECT DETAILS
+
+//parse url parameter
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
