@@ -28,9 +28,35 @@ nav a {
 }
 
 /*--------------INTRO-------------------*/
-#summary, #intro_details {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 27px;
+
+#summary {
+    padding: 30px 60px 0px 60px;
+    letter-spacing: 1px;
+    font-weight: 1px;
+    font-size: 25px;
+    font-family: 'helvetica';
+    font-stretch: 95%;
+}
+
+#intro p {
+    padding: 30px 30px;
+}
+
+.research, .iterations, .final {
+    padding: 0px 60px;
+}
+
+.research, .final {
+    background-color: #f1f1f1;
+    padding: 0px 60px;
+}
+
+h3 {
+    font-size: 50px;
+}
+
+#research_img {
+    width: 200;
 }
 
 /*--------------FOOTER-------------------*/

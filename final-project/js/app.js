@@ -51,6 +51,11 @@ const summaryElem = document.querySelector('#summary');
 const summary = intro[currentProject].summary;
 summaryElem.innerText = summary;
 
-const detailsElem = document.querySelector('#intro_details');
-const details = intro[currentProject].details;
-summaryElem.innerText = details;
+//const challengeElem = document.querySelector('#challenge');
+//const challenge = intro[currentProject].details;
+//challengeElem.innerText = challenge;
+
+//populate research DOM elements
+const researchImage = document.querySelector('#research_img');
+const researchPath = research[currentProject].image;
+introBanner.src = './project_assets/' + researchPath;

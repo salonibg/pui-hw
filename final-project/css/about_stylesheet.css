@@ -28,11 +28,72 @@ nav a {
 }
 
 /*--------------INTRODUCTION-------------------*/
-#introduction {
+.introduction {
     display: flex;
     flex-direction: row;
+    padding: 70px 290px;
+    justify-content: space-between;
+    background-color: #FBE7E9;
 }
 
+.introduction h3 {
+  font-size: 80px;
+  font-weight: 80px;
+  color: #7F4293;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding-left: 50px;
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+}
+
+.introduction img {
+  border-radius: 55%;
+  padding-right: 50px;
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/*--------------CLIENTS-------------------*/
+.clients {
+  padding: 0px 30px;
+}
+
+#companies {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 50px;
+}
 
 /*--------------FOOTER-------------------*/
 #footer {
