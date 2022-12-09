@@ -294,6 +294,9 @@ ul li div {
   backface-visibility: hidden;
 }
 
+
+
+
 .card:hover .cover_img {
   filter: drop-shadow(10px 10px 4px #9a9a9a);
   opacity: 0.3;
