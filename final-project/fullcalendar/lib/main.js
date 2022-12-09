@@ -14642,6 +14642,7 @@ var FullCalendar = (function (exports) {
                 googleCalendarId = parseGoogleCalendarId(refined.url);
             }
             if (googleCalendarId) {
+                console.log(refined.googleCalendarApiBase);
                 return {
                     googleCalendarId: googleCalendarId,
                     googleCalendarApiKey: refined.googleCalendarApiKey,
