@@ -1,21 +1,18 @@
 const intro = {
     "MediaVault": {
-        "image": "",
-        "title": "",
-        "summary": "",
-        "details": ""
+        "image": "mediavault-banner.png",
+        "summary": "sum",
+        "details": "det"
     },
     "ResMed": {
-        "image": "",
-        "title": "",
-        "summary": "",
-        "details": ""
+        "image": "resmed-banner.png",
+        "summary": "sum",
+        "details": "det"
     },
     "Reliabreed": {
-        "image": "",
-        "title": "",
-        "summary": "",
-        "details": ""
+        "image": "reliabreed-banner.png",
+        "summary": "sum",
+        "details": "det"
     }
 };
 

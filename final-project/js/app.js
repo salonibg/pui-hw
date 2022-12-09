@@ -38,3 +38,19 @@ function callbackFunc() {
 //parse url parameter
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
+
+//extract project
+const currentProject = params.get('project');
+
+//populate intro DOM elements
+const introBanner = document.querySelector('#banner');
+const bannerPath = intro[currentProject].image;
+introBanner.src = './project_assets/' + bannerPath;
+
+const summaryElem = document.querySelector('#summary');
+const summary = intro[currentProject].summary;
+summaryElem.innerText = summary;
+
+const detailsElem = document.querySelector('#intro_details');
+const details = intro[currentProject].details;
+summaryElem.innerText = details;

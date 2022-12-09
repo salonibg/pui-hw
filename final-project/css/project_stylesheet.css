@@ -1,3 +1,9 @@
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
 /*--------------HEADER-------------------*/
 #header {
     display: flex;
@@ -19,6 +25,12 @@ nav a {
   background: -webkit-linear-gradient(#DA2533, #7F4293);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/*--------------INTRO-------------------*/
+#summary, #intro_details {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 27px;
 }
 
 /*--------------FOOTER-------------------*/
