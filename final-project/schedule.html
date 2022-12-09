@@ -1,24 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Home</title>
-        <link rel="stylesheet" href="./css/home_stylesheet.css" type="text/css"/>
-        <script defer src="js/app.js"></script>
-        
-      <!--Header-->
-      <body width="100%">
-        <div id="header">
-          <a href="./index.html"><img src="./assets/name_logo.png" width=30% alt="Logo"/></a>
-          <nav>
-            <a href="./about.html">ABOUT</a>
-            <a href="./assets/uiux_resume.pdf">RESUME</a>
-            <a href="./schedule.html">SCHEDULE</a>
-          </nav>
-        </div>
 
-        <div>
-            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23fbe7e9&ctz=America%2FNew_York&showDate=1&showPrint=0&title=Saloni's%20Schedule&src=c2JnYW5kaGlAYW5kcmV3LmNtdS5lZHU&src=Y19kZDFnMzcxZXZzaHQ2bzJoZzA2YmIxZHA3NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y19oZHFkZmc5bWNqNGhrYmY1cm5ibWFjbnR2OEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=c2VuYXRlLW9wZXJhdGlvbnNAYW5kcmV3LmNtdS5lZHU&color=%23039BE5&color=%233F51B5&color=%239E69AF&color=%2333B679&color=%230B8043&color=%23616161" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-        </div>
+    <head>
+        <meta charset='utf-8' />
+        <title>Schedule</title>
+        <link href='./fullcalendar/lib/main.css' rel='stylesheet' />
+        <script src='./fullcalendar/lib/main.js'></script>
+        <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'addEventButton dayGridMonth,listYear'
+            },
+            customButtons: {
+                addEventButton: {
+                    text: 'schedule meeting',
+                    click: function() {
+                        var titleStr = prompt('Enter meeting name');
+                        var dateStr = prompt('Enter a date in YYYY-MM-DD format');
+                        var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+                        
+                        if (!isNaN(date.valueOf())) { // valid?
+                            calendar.addEvent({
+                            title: titleStr,
+                            start: date,
+                            allDay: true
+                            });
+                            //alert('Great. Now, update your database...');
+                        } else {
+                            alert('Invalid date.');
+                        }
+                    }
+                }
+            },
+
+            displayEventTime: false, // don't show the time column in list view
+
+            // THIS KEY WON'T WORK IN PRODUCTION!!!
+            // To make your own Google API key, follow the directions here:
+            // http://fullcalendar.io/docs/google_calendar/
+            googleCalendarApiKey: 'AIzaSyDPoBmZLr4Fw7h04JZshfx3QB-9hLT0tbo',
+
+            // US Holidays
+            events: 'en.usa#holiday@group.v.calendar.google.com',
+
+            eventClick: function(arg) {
+                // opens events in a popup window
+                window.open(arg.event.url, 'google-calendar-event', 'width=700,height=600');
+
+                arg.jsEvent.preventDefault() // don't navigate in main tab
+            },
+
+            loading: function(bool) {
+                document.getElementById('loading').style.display =
+                bool ? 'block' : 'none';
+            }
+
+            });
+
+            calendar.render();
+        });
+
+        </script>
+        <style>
+
+        body {
+            margin: 40px 10px;
+            padding: 0;
+            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        #loading {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        #calendar {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+
+        </style>
+    </head>
+    <body>
+
+        <!--Header-->
+        <div id="header">
+            <a href="./index.html"><img src="./assets/name_logo.png" width=30% alt="Logo"/></a>
+            <nav>
+              <a href="./about.html">ABOUT</a>
+              <a href="./assets/uiux_resume.pdf">RESUME</a>
+              <a href="./schedule.html">SCHEDULE</a>
+            </nav>
+          </div>
+
+        <div id='loading'>loading...</div>
+        <div id='calendar'></div>
 
         <!--Footer-->
         <div id="footer">
@@ -28,11 +115,12 @@
             </a>
             </div>
             <div id="icons">
-                <a href="https://www.linkedin.com/in/saloni-gandhi-8b94331a1/">
-                    <img id="footer_icon" src="./assets/linkedin icon.png" width="45" height="36" alt="" />
-                </a>
+            <a href="https://www.linkedin.com/in/saloni-gandhi-8b94331a1/">
+                <img id="footer_icon" src="./assets/linkedin icon.png" width="45" height="36" alt="" />
+            </a>
             </div>
         </div>
-      </body>
+
+    </body>
 </html>
 
