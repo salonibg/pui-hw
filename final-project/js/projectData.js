@@ -51,12 +51,12 @@ const iterations = {
 
 const final = {
     "MediaVault": {
-        "gif": ""
+        "gif": "mediavault.gif"
     },
     "ResFit": {
-        "gif": ""
+        "gif": "resfit.gif"
     },
     "Reliabreed": {
-        "gif": ""
+        "gif": "reliabreed.gif"
     }
 };
