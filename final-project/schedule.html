@@ -10,11 +10,15 @@
         <script src='../packages/icalendar/main.global.js'></script>
         
         <script>
+            import { Calendar } from '@fullcalendar/core';
+            //import dayGridPlugin from './@fullcalendar/daygrid'
+            //import iCalendarPlugin from './@fullcalendar/icalendar'
 
             document.addEventListener('DOMContentLoaded', function() {
                 var calendarEl = document.getElementById('calendar');
 
                 var calendar = new FullCalendar.Calendar(calendarEl, {
+                //plugins: [dayGridPlugin, iCalendarPlugin],
                 displayEventTime: false,
                 initialDate: '2019-04-01',
                 headerToolbar: {
