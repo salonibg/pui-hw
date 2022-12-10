@@ -4,12 +4,16 @@
   <head>
     <title>About</title>
     <link rel="stylesheet" href="./css/about_stylesheet.css" type="text/css"/>
+    <script defer src="js/about.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./isInViewport-master/lib/isInViewport.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
     <!--Header-->
     <div id="header">
-        <a href="./index.html"><img src="./assets/name_logo.png" width="150" alt="Logo"/></a>
+        <a href="./index.html"><img src="./assets/name_logo.png" width="30%" alt="Logo"/></a>
         <nav>
           <a class="select" href="./about.html">ABOUT</a>
           <a href="./assets/uiux_resume.pdf">RESUME</a>
@@ -24,17 +28,71 @@
     </div>
 
     <!--Clients-->
-    <div class="clients">
-      <h2>Clients</h2>
-
-      <div id="companies">
-        <img src="./about_assets/amazon circle.png" width="100" alt="amazon_logo">
-        <img src="./about_assets/dicks circle.png" width="100" alt="dicks_logo">
-        <img src="./about_assets/capitalone circle.png" width="100" alt="capone_logo">
+    <section class="content-row">
+      <div class="clients">
+        <h2>Clients</h2>
+          <div class="content">
+            <div class="card">
+              <img src="./about_assets/amazon circle.png" width="30%" alt="amazon_logo">    
+              <p class="title">Amazon</p>
+              <p class="text">In the summer of 2022, I interned directly at Amazon as a ux designer</p>
+            </div>
+            <div class="card">
+              <img src="./about_assets/dicks circle.png" width="30%" alt="dicks_logo">  
+              <p class="title">Dick's</p>
+              <p class="text">As part of class, we partnered with DSG in order to ideate a new service proposition</p>
+            </div>
+            <div class="card">
+              <img src="./about_assets/capitalone circle.png" width="30%" alt="capone_logo">
+              <p class="title">Capital One</p>
+              <p class="text">As part of class, we designed, developed, and deployed a new mobile app, working in conjunction with capital one</p>
+            </div>
+          </div>
       </div>
-    </div>
+      <hr>
+    </section>
+
+    <!--Areas of Work-->
+    <section class="content-row">
+      <div class="disciplines">
+        <h2>Areas of Work</h2>
+        <div class="careers">
+          <div id="discipline1" width="30%" >UX Design</div>
+          <div id="discipline2" width="30%">Product Design</div>
+          <div id="discipline3" width="30%">Service Design</div>
+          <div id="discipline4" width="30%">Design Research</div>
+          <div id="discipline5" width="30%">Product Management</div>
+        </div>
+      </div>
+      <hr>
+    </section>
     
-     <!--Footer-->
+    <!--Passions-->
+    <section class="content-row">
+      <div class="passions">
+        <h2>Passions</h2>
+           <div class="content">
+              <div class="card">
+                <img src="./about_assets/paint-palette.png" width="25%" alt="paint_icon">    
+                <p class="title">Painting</p>
+                <p class="text">I create my own artwork with mediums including water color, oil paint, pastel, chrcoal, shading pencil, colored pencil</p>
+              </div>
+              <div class="card">
+                <img src="./about_assets/barbell.png" width="25%" alt="fitness_icon">    
+                <p class="title">Fitness</p>
+                <p class="text">I like to stay active primarily through weightlifting and calisthenics</p>
+              </div>
+              <div class="card">
+                <img src="./about_assets/plane.png" width="25%" alt="travel_icon">  
+                <p class="title">Traveling</p>
+                <p class="text">I like to explore new places and thus far have visited places including Germany, Spain, Peru, India, Haiti, and Kenya</p>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--Footer-->
      <div id="footer">
       <div id="icons">
       <a href="mailto:salonigandhi439@gmail.com">

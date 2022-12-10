@@ -9,40 +9,9 @@
         <script src='./fullcalendar/lib/main.js'></script>
         <script src='./node_modules/@fullcalendar/icalendar/main.global.js'></script>
         
+        
         <script>
-            //import iCalendarPlugin from '@fullcalendar/icalendar'
-
-            document.addEventListener('DOMContentLoaded', function() {
-                
-                var calendarEl = document.getElementById('calendar');
-                
-                var calendar = new FullCalendar.Calendar(calendarEl, {
-                    
-                //plugins: [dayGridPlugin, iCalendarPlugin],
-                displayEventTime: false,
-                initialDate: '2019-04-01',
-                headerToolbar: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'dayGridMonth,listYear'
-                },
-                events: {
-                    url: 'https://calendar.google.com/calendar/ical/sbgandhi%40andrew.cmu.edu/public/basic.ics',
-                    format: 'ics',
-                    failure: function() {
-                    document.getElementById('script-warning').style.display = 'block';
-                    }
-                },
-                loading: function(bool) {
-                    document.getElementById('loading').style.display =
-                    bool ? 'block' : 'none';
-                }
-                });
-
-                calendar.render();
-            });
-
-        /*document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
 
             
             var calendarEl = document.getElementById('calendar');
@@ -55,27 +24,6 @@
                 center: 'title',
                 right: 'addEventButton dayGridMonth,listYear'
             },
-            customButtons: {
-                addEventButton: {
-                    text: 'schedule meeting',
-                    click: function() {
-                        var titleStr = prompt('Enter meeting name');
-                        var dateStr = prompt('Enter a date in YYYY-MM-DD format');
-                        var date = new Date(dateStr + 'T00:00:00'); // will be in local time
-                        
-                        if (!isNaN(date.valueOf())) { // valid?
-                            calendar.addEvent({
-                            title: titleStr,
-                            start: date,
-                            allDay: true
-                            });
-                            //alert('Great. Now, update your database...');
-                        } else {
-                            alert('Invalid date.');
-                        }
-                    }
-                }
-            },
 
             displayEventTime: false, // don't show the time column in list view
 
@@ -84,9 +32,15 @@
             // http://fullcalendar.io/docs/google_calendar/
             googleCalendarApiKey: 'AIzaSyDiRg0BuDbRRrRtJil4bP9s2l8HlQ3Ztak',
 
-            // US Holidays
-            //events: 'en.usa#holiday@group.v.calendar.google.com',
-            events: {googleCalendarId: 'salonigandhi439@gmail.com'},
+            // events 
+            events: [
+                {title  : 'out of the country', start  : '2022-12-21T14:30:00', end    : '2023-01-12T14:30:00'},
+                {title  : '67443 pitch', start  : '2022-12-16'},
+                {title  : 'birthday dinner', start  : '2022-12-10'},
+                {title  : 'start of spring sem', start  : '2023-01-17'},
+            ],
+            
+            eventTimeFormat: { hour: '2-digit', minute: '2-digit', second: '2-digit', meridiem: false},
             
             eventClick: function(arg) {
                 // opens events in a popup window
@@ -103,7 +57,7 @@
             });
 
             calendar.render();
-        });*/
+        });
 
         </script>
         <style>
@@ -162,6 +116,7 @@
         <div id='loading'>loading...</div>
         
         <div id='calendar'></div>
+
 
         <!--Footer-->
         <div id="footer">

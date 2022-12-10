@@ -1,4 +1,5 @@
-//TIMELINE
+//HOME PAGE
+//timeline
 var items = document.querySelectorAll("li");
 
 function isItemInView(item){
@@ -33,8 +34,8 @@ function callbackFunc() {
   window.addEventListener("resize", callbackFunc);
   window.addEventListener("scroll", callbackFunc);
 
-//PROJECT DETAILS
 
+//PROJECT DETAILS PAGE
 //parse url parameter
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
@@ -59,3 +60,5 @@ summaryElem.innerText = summary;
 const researchImage = document.querySelector('#research_img');
 const researchPath = research[currentProject].image;
 introBanner.src = './project_assets/' + researchPath;
+
+
