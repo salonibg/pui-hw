@@ -4,6 +4,23 @@ body {
     width: 100%;
   }
   
+h3 {
+    color: #DA2533;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+}
+
+h5 {
+    color: #7F4293;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+}
+
 /*--------------HEADER-------------------*/
 #header {
     display: flex;
@@ -46,18 +63,29 @@ nav a {
     padding: 0px 60px;
 }
 
-.research, .final {
-    background-color: #f1f1f1;
-    padding: 0px 60px;
-}
 
 h3 {
     font-size: 50px;
 }
 
-#research_img {
-    width: 200;
+
+
+
+/*--------------RESEARCH-------------------*/
+#research_content {
+    display: flex;
+    padding: 20px;
 }
+
+
+/*--------------ITERATIONS-------------------*/
+#design_content, #testing_content {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+}
+
+
 
 /*--------------FOOTER-------------------*/
 #footer {

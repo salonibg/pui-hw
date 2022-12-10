@@ -35,6 +35,7 @@ function callbackFunc() {
   window.addEventListener("scroll", callbackFunc);
 
 
+
 //PROJECT DETAILS PAGE
 //parse url parameter
 const queryString = window.location.search;
@@ -43,22 +44,50 @@ const params = new URLSearchParams(queryString);
 //extract project
 const currentProject = params.get('project');
 
+
 //populate intro DOM elements
 const introBanner = document.querySelector('#banner');
+console.log(intro[currentProject]);
 const bannerPath = intro[currentProject].image;
+console.log(bannerPath);
 introBanner.src = './project_assets/' + bannerPath;
 
 const summaryElem = document.querySelector('#summary');
 const summary = intro[currentProject].summary;
 summaryElem.innerText = summary;
 
-//const challengeElem = document.querySelector('#challenge');
-//const challenge = intro[currentProject].details;
-//challengeElem.innerText = challenge;
 
 //populate research DOM elements
 const researchImage = document.querySelector('#research_img');
 const researchPath = research[currentProject].image;
-introBanner.src = './project_assets/' + researchPath;
+console.log(researchPath);
+researchImage.src = './project_assets/' + researchPath;
+
+const researchContent = document.querySelector('#research_content');
+const researchInfo = research[currentProject].content;
+researchContent.innerText = researchInfo;
 
 
+//populate iteration DOM elements
+const wireframeImg = document.querySelector('#wireframe_img');
+const wireframePath = iterations[currentProject].image;
+wireframeImg.src = './project_assets/' + wireframePath;
+
+const wireframeContent = document.querySelector('#wireframe_content');
+const wireframeInfo = iterations[currentProject].wireframeContent;
+wireframeContent.innerText = wireframeInfo;
+
+const methods = document.querySelector('#methodology');
+const methodsInfo = iterations[currentProject].methods;
+methods.innerText = methodsInfo;
+
+const insight = document.querySelector('#insights');
+const insightsInfo = iterations[currentProject].insights;
+insight.innerText = insightsInfo;
+
+
+//populate final DOM elements
+
+const prototype = document.querySelector('#final_gif');
+const prototypePath = final[currentProject].gif;
+prototype.src = './project_assets/' + prototypePath;
