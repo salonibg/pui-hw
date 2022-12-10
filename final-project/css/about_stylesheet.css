@@ -16,7 +16,7 @@ h2 {
     justify-content: space-between;
     align-items: flex-end;
     background-color: #FBE7E9;
-    padding: 30px 30px 30px 30px;
+    padding: 3%;
 }
 
 
@@ -146,12 +146,11 @@ section.content-row.in-view {
 .content {
   max-width: 1024px;
   width: 100%;
-  padding: 0 4%;
   padding-top: 20px;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
-  align-items: left;
+  align-items: center;
 }
 
 @media screen and (max-width: 767px) {

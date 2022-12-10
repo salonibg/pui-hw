@@ -8,7 +8,7 @@ body {
 #main-content {
   display: flex;
   flex-direction: column;
-  
+  width: 100%;
 }
 
 
@@ -18,7 +18,7 @@ body {
     justify-content: space-between;
     align-items: flex-end;
     background-color: #FBE7E9;
-    padding: 30px 30px 30px 30px;
+    padding: 3%;
     width: 100%;
 }
 
