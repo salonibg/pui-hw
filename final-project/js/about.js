@@ -1,5 +1,5 @@
-//ABOUT PAGE
-//sections
+
+
 jQuery(document).ready(function($) {
 
 	var ns_in_viewport = function() {
