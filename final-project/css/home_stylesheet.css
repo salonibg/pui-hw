@@ -177,8 +177,11 @@ ul li div {
   transition: all .5s ease-in-out;
 }
 
+.card {
+  position: relative;
+}
 
-.cover_img {
+.card img {
   opacity: 1;
   display: block;
   height: auto;
@@ -187,19 +190,26 @@ ul li div {
 }
 
 
-
-
 .card:hover .cover_img {
   filter: drop-shadow(10px 10px 4px #9a9a9a);
   opacity: 0.3;
 }
 
-.project_title {
-  font-size: 35px;
+ul li:nth-child(even) h2 {
+  text-decoration: none;
+  padding-bottom: 4px;
   color: #7F4293;
-  opacity: 0;
+  transform: translate3d(140px, 0, 0);
+  font-size: 40px;
 }
 
+ul li:nth-child(odd) h2 {
+  transform: translate3d(-740px, 0, 0);
+  text-decoration: none;
+  padding-bottom: 4px;
+  color: #7F4293;
+  font-size: 40px;
+}
 
 @media screen and (max-width: 900px) {
   ul li div {
