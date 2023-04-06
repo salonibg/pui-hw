@@ -104,14 +104,15 @@ function retrieveFromLocalStorage() {
     const cartArrayString = localStorage.getItem('storedCart');
     const cartArray = JSON.parse(cartArrayString);
     cart = cartArray;
+    console.log(cart);
 }
 
 
 
-if (localStorage.getItem("storedCart") != "null") {
-    retrieveFromLocalStorage();
-} else {
+if (localStorage.getItem("storedCart") == "null") {
     var cart = [];
+} else {
+    retrieveFromLocalStorage();
 }
 
 
@@ -125,6 +126,7 @@ function addToCart() {
 
     cart.push(currentRoll);
     saveToLocalStorage(cart);
+    console.log(cart);
 }
 
 let buttonPress = document.querySelector('#cart-btn');
@@ -136,6 +138,7 @@ function saveToLocalStorage(cart) {
     localStorage.setItem('storedCart', cartArrayString);
 
     console.log(cartArrayString);
+    retrieveFromLocalStorage();
 }
 
 

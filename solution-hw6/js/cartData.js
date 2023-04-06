@@ -17,14 +17,16 @@ let packOptions = {
 var cart = [];
 var totalPrice = 0.0;
 
+var storedCart = localStorage.getItem('storedCart');
+
 //retrieve cart from local storage if cart exists
-if (localStorage.getItem('storedCart') != "null") {
+if (JSON.parse(storedCart) == "null") {
+    var cart = [];
+} else {
     retrieveFromLocalStorage();
     for (const item of cart) {
         showRolls(item);
     }
-} else {
-    var cart = [];
 }
 
 //retrieve cart from local storage
@@ -32,6 +34,7 @@ function retrieveFromLocalStorage() {
     const cartArrayString = localStorage.getItem('storedCart');
     const cartArray = JSON.parse(cartArrayString);
     cart = cartArray;
+    console.log(cartArray == null);
 }
 
 
@@ -72,6 +75,7 @@ function updateDisplay(rollItem) {
     const totalCartPrice = document.querySelector('#cartTotalPrice');
     totalCartPrice.innerText =  "$" + (totalPrice.toFixed(2)).toString();
 
+    saveToLocalStorage(cart);
 };
 
 //update total price when an item is removed
